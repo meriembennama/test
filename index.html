@@ -34,19 +34,21 @@
 
   <button onclick="addToCart()">Ajouter au panier</button>
 
-  <!-- Affichage de ta boutique Ecwid -->
+  <!-- Affichage de la boutique -->
   <div id="my-store-118917365"></div>
-  <div>
-    <script data-cfasync="false" type="text/javascript"
-      src="https://app.ecwid.com/script.js?118917365&data_platform=code&data_date=2025-08-21"
-      charset="utf-8"></script>
-    <script type="text/javascript">Ecwid.init();</script>
-  </div>
+  <div id="ecwid-shopping-cart"></div>
+  <div id="ecwid-store"></div>
 
-  <!-- Script pour ajouter un produit au panier -->
-  <script>
+  <script data-cfasync="false" type="text/javascript" 
+    src="https://app.ecwid.com/script.js?118917365&data_platform=code&data_date=2025-08-21" 
+    charset="utf-8">
+  </script>
+
+  <script type="text/javascript">
+    Ecwid.init();
+
     Ecwid.OnAPILoaded.add(function () {
-      console.log("Ecwid API chargée !");
+      console.log("✅ Ecwid API chargée !");
     });
 
     function addToCart() {
@@ -54,6 +56,8 @@
         id: 775858552,
         quantity: 1
       });
+
+      alert("✅ Produit ajouté au panier !");
     }
   </script>
 
