@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Ajout au panier Ecwid</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      background-color: #f9f9f9;
+    }
+
+    button {
+      padding: 12px 24px;
+      background-color: #4CAF50;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Test d’ajout au panier Ecwid</h1>
+  <p>Clique sur le bouton pour ajouter le produit au panier :</p>
+
+  <button onclick="addToCart()">Ajouter au panier</button>
+
+  <!-- Affichage de ta boutique Ecwid -->
+  <div id="my-store-118917365"></div>
+  <div>
+    <script data-cfasync="false" type="text/javascript"
+      src="https://app.ecwid.com/script.js?118917365&data_platform=code&data_date=2025-08-21"
+      charset="utf-8"></script>
+    <script type="text/javascript">Ecwid.init();</script>
+  </div>
+
+  <!-- Script pour ajouter un produit au panier -->
+  <script>
+    Ecwid.OnAPILoaded.add(function () {
+      console.log("Ecwid API chargée !");
+    });
+
+    function addToCart() {
+      Ecwid.Cart.addProduct({
+        id: 775858552,
+        quantity: 1
+      });
+    }
+  </script>
+
+</body>
+</html>
